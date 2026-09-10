@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "repository": "https://github.com/fuckramochka/mioplugin",
+  "updated_at": "2026-09-10T04:49:12Z",
+  "plugins": [
+    {
+      "id": "auto_reaction",
+      "name": "Auto Reaction",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Автоматично встановлює швидкі емодзі-реакції на вхідні повідомлення за заданими ключовими словами або фільтрами.",
+      "category": "Automation",
+      "icon": "msg_reactions",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/auto_reaction/plugin.py"
+    },
+    {
+      "id": "custom_profile",
+      "name": "Custom Profile",
+      "version": "1.8.1",
+      "author": "@RoflPlugins & @fuckramochka",
+      "description": "Розширене оформлення та кастомізація профілю Telegram: кольорові градієнти, кастомні банери, стилі бульбашок повідомлень.",
+      "category": "Customization",
+      "icon": "msg_customize",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/custom_profile/plugin.py"
+    },
+    {
+      "id": "in_app_notifications",
+      "name": "In-App Notifications",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Елегантні спливаючі внутрішні сповіщення під час перебування в додатку із швидкою відповіддю та плавними анімаціями.",
+      "category": "UI / UX",
+      "icon": "msg_notifications",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/in_app_notifications/plugin.py"
+    },
+    {
+      "id": "message_styler",
+      "name": "Message Styler",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Форматування та стилізація вихідних повідомлень (естетичні шрифти, декоративні символи, автоматичне застосування Markdown).",
+      "category": "Formatting",
+      "icon": "msg_font",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/message_styler/plugin.py"
+    },
+    {
+      "id": "quick_tools",
+      "name": "Quick Tools",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Корисні інструменти у контекстних меню повідомлень: копіювання ID користувача/каналу, копіювання чистого тексту без форматування, швидкий переклад.",
+      "category": "Utility",
+      "icon": "msg_tools",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/quick_tools/plugin.py"
+    },
+    {
+      "id": "text_transformer",
+      "name": "Text Transformer",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Dot-commands for outgoing text: .upper .lower .reverse .mock .uwu.",
+      "category": "Formatting",
+      "icon": "msg_font",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/text_transformer/plugin.py"
+    },
+    {
+      "id": "dice_roller",
+      "name": "Dice Roller",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Tabletop dice in chat: .roll 2d6, .roll d20, .flip.",
+      "category": "Utility",
+      "icon": "msg_games",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/dice_roller/plugin.py"
+    },
+    {
+      "id": "link_cleaner",
+      "name": "Link Cleaner",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Strips tracking params (utm_*, fbclid, si, ...) from outgoing links.",
+      "category": "Privacy",
+      "icon": "msg_link",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/link_cleaner/plugin.py"
+    },
+    {
+      "id": "code_formatter",
+      "name": "Code Formatter",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": ".code .inline .spoiler .quote shortcuts for outgoing text.",
+      "category": "Formatting",
+      "icon": "msg_code",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/code_formatter/plugin.py"
+    },
+    {
+      "id": "message_counter",
+      "name": "Message Counter",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Session stats for incoming/outgoing messages (.stats).",
+      "category": "Utility",
+      "icon": "msg_stats",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/message_counter/plugin.py"
+    },
+    {
+      "id": "antispam_guard",
+      "name": "Antispam Guard",
+      "version": "1.0.0",
+      "author": "@fuckramochka",
+      "description": "Passive flood watcher: warns about repeated texts and link blasts.",
+      "category": "Privacy",
+      "icon": "msg_shield",
+      "entry_point": "plugin.py",
+      "min_app_version": "1.0.0",
+      "download_url": "https://raw.githubusercontent.com/fuckramochka/mioplugin/main/plugins/antispam_guard/plugin.py"
+    }
+  ]
+}

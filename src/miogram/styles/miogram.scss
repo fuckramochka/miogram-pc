@@ -1,0 +1,218 @@
+/**
+ * Miogram Universal Preset & Theming Stylesheet.
+ * Supports dynamic switching between Discord Ultra, iOS Glass, Minimalist, Windows XP, and Classic TG.
+ */
+
+// ==========================================================================
+// 1. DISCORD ULTRA PRESET
+// ==========================================================================
+:root[data-miogram-preset="DISCORD_ULTRA"] {
+  --folders-sidebar-width: 4.5rem; // 72dp Discord Rail
+  --color-primary: #5865F2;        // Discord Blurple
+  --color-primary-hover: #4752C4;
+  --color-background: #313338;     // Discord chat dark bg
+  --color-background-compact-menu: #2B2D31;
+  --color-chat-hover: #35373C;
+  --color-chat-active: #404249;
+  --color-text: #DBDEE1;
+  --color-text-secondary: #949BA4;
+  --color-text-green: #23A55A;
+  --color-badge: #F23F43;
+
+  #Main {
+    background-color: #1E1F22 !important; // Darkest rail bg
+  }
+
+  // Discord Squircle Morph & Pill on Folders
+  [class*="FoldersSidebar_root"] {
+    background-color: #1E1F22 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+
+    [class*="Folder_folder"] {
+      position: relative;
+      margin: 0.25rem 0;
+
+      // Pill indicator on left edge
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 4px;
+        height: 0;
+        background-color: #FFFFFF;
+        border-radius: 0 4px 4px 0;
+        transform: translateY(-50%);
+        transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+      }
+
+      &:hover::after {
+        height: 1.25rem; // 20px
+        opacity: 1;
+      }
+
+      &[class*="active"]::after {
+        height: 2.5rem; // 40px
+        opacity: 1;
+      }
+
+      // Squircle morph: idle circle -> hover/active squircle
+      [class*="Folder_icon"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%; // 24px circle on 48px box
+        background-color: #313338;
+        transition: border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 0.2s ease,
+                    color 0.2s ease;
+      }
+
+      &:hover [class*="Folder_icon"] {
+        border-radius: 1rem; // 16px squircle
+        background-color: #5865F2;
+        color: #FFFFFF;
+      }
+
+      &[class*="active"] [class*="Folder_icon"] {
+        border-radius: 1rem; // 16px squircle
+        background-color: #5865F2;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  // Discord channels column (LeftColumn)
+  #LeftColumn {
+    background-color: #2B2D31 !important;
+    border-inline-end: 1px solid #1F2023;
+  }
+
+  // Middle Column (Chat viewport)
+  #MiddleColumn {
+    background-color: #313338 !important;
+  }
+}
+
+// ==========================================================================
+// 2. IOS GLASS PRESET (Tokens 1:1 with MiogramIosTheme.java)
+// ==========================================================================
+:root[data-miogram-preset="IOS_GLASS"] {
+  --color-primary: #007AFF;         // iOS System Blue
+  --color-primary-hover: #0A84FF;
+  --color-text-secondary: #8E8E93; // iOS Muted
+  --color-borders: #C8C7CC;        // iOS Hairline Separator
+
+  // Light theme navbar & blur
+  &:not(.theme-dark) {
+    --color-background-compact-menu: rgba(242, 242, 242, 0.9); // #F2F2F2E6
+    --color-background: #FFFFFF;
+  }
+
+  // OLED dark theme
+  &.theme-dark {
+    --color-background: #000000;    // Pure OLED black
+    --color-background-compact-menu: rgba(29, 29, 29, 0.9); // #1D1D1DE6
+    --color-borders: rgba(84, 84, 88, 0.55);
+  }
+
+  [class*="FoldersSidebar_root"] {
+    backdrop-filter: blur(25px) saturate(180%);
+    border-radius: 1.25rem;
+  }
+
+  // Inset card styling for lists
+  .chat-item {
+    border-radius: 0.75rem;
+    margin-inline: 0.5rem;
+    transition: background-color 0.15s ease;
+  }
+}
+
+// ==========================================================================
+// 3. MINIMALIST PRESET
+// ==========================================================================
+:root[data-miogram-preset="MINIMALIST"] {
+  --folders-sidebar-width: 3.75rem; // 60dp compact rail
+
+  [class*="FoldersSidebar_root"] {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    border-radius: 0.75rem;
+
+    [class*="Folder_folder"] {
+      min-height: 3.5rem;
+
+      [class*="Folder_icon"] {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// 4. NYA-CURTAIN PRIVACY SHIELD
+// ==========================================================================
+.miogram-nya-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #1a1025 0%, #08040d 100%);
+  color: #FFFFFF;
+  user-select: none;
+
+  .nya-banner {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.6));
+    animation: nyaFloat 3s ease-in-out infinite;
+  }
+
+  .nya-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nya-subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2rem;
+  }
+
+  .nya-pin-input {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    width: 14rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: #FF69B4;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
+    }
+  }
+}
+
+@keyframes nyaFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
