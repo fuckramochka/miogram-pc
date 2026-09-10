@@ -14,6 +14,7 @@ const BADGE_TEXT_COLOR: Rgba<u8> = Rgba([0xFF, 0xFF, 0xFF, 0xFF]);
 
 pub fn set_badge_count_icon(window: &tauri::WebviewWindow, amount: i32, is_muted: bool) {
   if amount == 0 {
+    #[cfg(target_os = "windows")]
     window.set_overlay_icon(None).unwrap_or_default();
 
     if let Ok(tray_opt) = super::TRAY_HANDLE.lock() {
@@ -25,6 +26,7 @@ pub fn set_badge_count_icon(window: &tauri::WebviewWindow, amount: i32, is_muted
     let png = generate_counter_png(48, amount, is_muted);
     let converted = Image::from_bytes(&png);
 
+    #[cfg(target_os = "windows")]
     if let Ok(converted) = converted {
       window.set_overlay_icon(Some(converted)).unwrap_or_default();
     } else {
