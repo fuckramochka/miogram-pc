@@ -23,7 +23,7 @@
     "active": true,
     "createUpdaterArtifacts": false,
     "category": "SocialNetworking",
-    "copyright": "Telegram Air",
+    "copyright": "Miogram",
     "externalBin": [],
     "icon": [
       "icons/32x32.png",
@@ -32,7 +32,7 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "longDescription": "",
+    "longDescription": "Miogram PC — Secure Agentic Desktop & Web Client based on Telegram Web Z + Tauri",
     "macOS": {
       "entitlements": "entitlements.mac.plist",
       "exceptionDomain": "",
@@ -41,7 +41,7 @@
       "signingIdentity": null
     },
     "resources": [],
-    "shortDescription": "",
+    "shortDescription": "Miogram PC",
     "targets": [
       "app",
       "nsis",
@@ -54,6 +54,6 @@
       }
     }
   },
-  "identifier": "org.telegram.TelegramAirBeta",
-  "productName": "Telegram Air"
+  "identifier": "app.miogram.desktop",
+  "productName": "Miogram"
 }
